@@ -1,0 +1,104 @@
+Flow report for PLL
+Fri Mar 25 00:57:05 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Flow Summary                                                                 ;
++---------------------------+--------------------------------------------------+
+; Flow Status               ; Successful - Fri Mar 25 00:57:05 2016            ;
+; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name             ; PLL                                              ;
+; Top-level Entity Name     ; PLL                                              ;
+; Family                    ; Cyclone                                          ;
+; Total logic elements      ; 0                                                ;
+; Total pins                ; 3                                                ;
+; Total virtual pins        ; 0                                                ;
+; Total memory bits         ; 0                                                ;
+; Total PLLs                ; 1                                                ;
++---------------------------+--------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 03/25/2016 00:57:03 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; PLL                 ;
++-------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                   ;
++-----------------------+---------------------------------+---------------+-------------+------------+
+; Assignment Name       ; Value                           ; Default Value ; Entity Name ; Section Id ;
++-----------------------+---------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID ; 189607940373847.145885662201892 ; --            ; --          ; --         ;
++-----------------------+---------------------------------+---------------+-------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 473 MB              ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 379 MB              ; 00:00:01                           ;
+; Total                ; 00:00:03     ; --                      ; --                  ; 00:00:03                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; Artsiom-PC       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer   ; Artsiom-PC       ; Windows 7 ; 6.2        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map PLL --source=PLL.vhd --ini=greybox_disable_cut_checks=on --family=Cyclone
+quartus_eda PLL --greybox_verilog=on --netlist=C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/PLL_syn.v
+
+
+

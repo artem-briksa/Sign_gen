@@ -1,0 +1,10 @@
+Analysis & Synthesis Status : Successful - Sun Apr 24 13:12:37 2016
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : Generator
+Top-level Entity Name : SinglePortRAM_handcrafted
+Family : Cyclone
+Total logic elements : 0
+Total pins : 26
+Total virtual pins : 0
+Total memory bits : 2,048
+Total PLLs : 0

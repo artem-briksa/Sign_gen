@@ -1,0 +1,150 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2010 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+# Date created = 01:55:48  February 16, 2016
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Generator_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY Cyclone
+set_global_assignment -name DEVICE EP1C6Q240C6
+set_global_assignment -name TOP_LEVEL_ENTITY SinglePortRAM_handcrafted
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "01:55:48  FEBRUARY 16, 2016"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 240
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name FMAX_REQUIREMENT "200 MHz"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_121 -to Dout[0]
+set_location_assignment PIN_122 -to Dout[1]
+set_location_assignment PIN_123 -to Dout[2]
+set_location_assignment PIN_124 -to Dout[3]
+set_location_assignment PIN_125 -to Dout[4]
+set_location_assignment PIN_126 -to Dout[5]
+set_location_assignment PIN_127 -to Dout[6]
+set_location_assignment PIN_128 -to Dout[7]
+set_location_assignment PIN_131 -to Dout[8]
+set_location_assignment PIN_132 -to Dout[9]
+set_location_assignment PIN_133 -to Dout[10]
+set_location_assignment PIN_134 -to Dout[11]
+set_location_assignment PIN_135 -to Dout[12]
+set_location_assignment PIN_136 -to Dout[13]
+set_location_assignment PIN_137 -to CLK_200MHz_out
+set_location_assignment PIN_29 -to CLK_100MHz
+set_global_assignment -name CYCLONE_CONFIGURATION_DEVICE EPCS1
+set_global_assignment -name RESERVE_ASDO_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_global_assignment -name SIMULATION_MODE TIMING
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME GeneratorTB -section_id GeneratorTB
+set_global_assignment -name EDA_TEST_BENCH_FILE GeneratorTB.vhd -section_id GeneratorTB2
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH Memory_on_LUT_RAM_1Port_TB -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME GeneratorTB -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME uut -section_id GeneratorTB
+set_location_assignment PIN_158 -to CLK_offset_2
+set_location_assignment PIN_159 -to CLK_offset_1
+set_global_assignment -name SDC_FILE Generator.out.sdc
+set_global_assignment -name VHDL_FILE GeneratorTB.vhd
+set_global_assignment -name VHDL_FILE Generator.vhd
+set_global_assignment -name VHDL_FILE Signal_generator.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Generator_vwf.vwf
+set_global_assignment -name QIP_FILE PLL.qip
+set_global_assignment -name VECTOR_WAVEFORM_FILE Generator.vwf
+set_global_assignment -name SDC_FILE Time_constraints.sdc
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VHDL_FILE Edge_selector.vhd
+set_global_assignment -name EDA_TEST_BENCH_NAME Edge_selector -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Edge_selector
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "10 us" -section_id Edge_selector
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Edge_selector -section_id Edge_selector
+set_global_assignment -name EDA_TEST_BENCH_NAME Edge_attempt_2 -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Edge_attempt_2
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "10 us" -section_id Edge_attempt_2
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Edge_selector_TB -section_id Edge_attempt_2
+set_global_assignment -name VHDL_FILE Frequency_divider.vhd
+set_global_assignment -name EDA_TEST_BENCH_NAME Frequency_divider_TB -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Frequency_divider_TB
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "11 us" -section_id Frequency_divider_TB
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Frequency_divider_TB -section_id Frequency_divider_TB
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_1993
+set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name MIF_FILE Generator.mif
+set_global_assignment -name QIP_FILE SinglePortROM.qip
+set_global_assignment -name VHDL_FILE Memory_on_LUT_ROM.vhd
+set_global_assignment -name EDA_TEST_BENCH_NAME Memory_on_lut_rom_TB -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Memory_on_lut_rom_TB
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "11 us" -section_id Memory_on_lut_rom_TB
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Memory_on_lut_rom_TB -section_id Memory_on_lut_rom_TB
+set_global_assignment -name QIP_FILE SinglePortRAM.qip
+set_global_assignment -name VHDL_FILE single_port_ram_with_init.vhd
+set_global_assignment -name QIP_FILE DualPortRAM.qip
+set_global_assignment -name VHDL_FILE Memory_on_LUT_RAM_2Port.vhd
+set_global_assignment -name VHDL_FILE Memory_on_LUT_RAM_1Port.vhd
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[0]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[1]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[2]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[4]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[5]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[6]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[7]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[8]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[9]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[10]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[11]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[12]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[13]
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[3]
+set_global_assignment -name VHDL_FILE SinglePortRAM_handcrafted.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name EDA_TEST_BENCH_FILE GeneratorTB.vhd -section_id GeneratorTB
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Rise_edge_TB.vhd -section_id Edge_selector
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Edge_selector_TB.vhd -section_id Edge_attempt_2
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Frequency_divider_TB.vhd -section_id Frequency_divider_TB
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Memory_on_lut_rom_TB.vhd -section_id Memory_on_lut_rom_TB
+set_global_assignment -name EDA_TEST_BENCH_NAME Memory_on_LUT_RAM_1Port_TB -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Memory_on_LUT_RAM_1Port_TB
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "10 us" -section_id Memory_on_LUT_RAM_1Port_TB
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Memory_on_LUT_RAM_1Port_TB -section_id Memory_on_LUT_RAM_1Port_TB
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Memory_on_LUT_RAM_1Port_TB.vhd -section_id Memory_on_LUT_RAM_1Port_TB
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

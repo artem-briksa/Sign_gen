@@ -1,0 +1,208 @@
+--library IEEE;
+--use IEEE.STD_LOGIC_1164.ALL;
+--use IEEE.MATH_REAL.ALL;
+--use IEEE.NUMERIC_STD.ALL;
+--
+--entity Memory_on_LUT_RAM_2Port is
+--	generic 
+--	(
+--		Sample_size		: natural 	:= 8;
+--		Buffered_pages	: natural 	:= 2;
+--		RAM_size			: natural	:= 16;
+--		FrDev_size		: natural 	:= 18
+--	);
+--	
+--	port (
+--		CLK				: in std_logic;
+--		Enable			: in std_logic;	-- '0' - idle/force zero; '1' - standart memory work
+--		Output			: out std_logic_vector ((Sample_size - 1) downto 0);
+--		ROM_Counter_load	: in std_logic_vector ((Sample_size - 1) downto 0)		:= std_logic_vector(to_unsigned(255, Sample_size));
+--		Counts_t   		: in std_logic_vector ((FrDev_size - 1) downto 0) 		:= (others => '0') 
+--	);
+--end Memory_on_LUT_RAM_2Port;
+--
+--architecture rtl of Memory_on_LUT_RAM_2Port is
+--
+--------------CONSTANTS------------------------------------------------------------------
+--	constant Page_size		: natural 		:= 16; --Samples per page
+--	constant ROM_size			: natural 		:= Page_size * RAM_size;
+--	constant Zero_address	: natural 		:= 0;
+--	
+---------------TYPES---------------------------------------------------------------------
+--	type memory_state is (idle, operate);
+----	type RAM_side is (side_A, side_B);
+--	subtype sample_type is std_logic_vector ((Sample_size - 1) downto 0);
+---------------SIGNALS-------------------------------------------------------------------	
+--	signal clk_t 				: std_logic 	:= '0';
+--	signal wr_RAM_enable		: std_LOGIC 	:= '0';
+--	signal RAM_enable			: std_LOGIC 	:= '0';
+--	signal load_page_cmplt	: std_LOGIC 	:= '0';
+--	signal divided_clock		: std_logic 	:= '0';
+--	signal Fall 				: std_logic		:= '0';
+--	signal Rise 				: std_logic		:= '0';
+--	signal address_ROM		: std_logic_vector ((Sample_size - 1) downto 0);
+--	signal address_RAM		: std_logic_vector ((Sample_size - 1) downto 0);
+--	signal w_addr_offset_RAM: sample_type 	:= (others => '0');
+--	signal r_addr_offset_RAM: sample_type 	:= (others => '0');
+--	signal data_ROM_to_RAM	: sample_type 	:= (others => '0');
+--	signal data_RAM_to_Out	: sample_type 	:= (others => '0');
+--   signal ROM_Counter 		: unsigned((ceil(log(ROM_size)) - 1) downto 0) 		:= (others => '0');
+--   signal RAM_Counter_r 	: unsigned((ceil(log(RAM_size)) - 1) downto 0) 		:= (others => '0');
+--   signal RAM_Counter_w 	: unsigned((ceil(log(RAM_size)) - 1) downto 0) 		:= (others => '0');
+--   signal cur_rd_page		: unsigned((ceil(log(Page_size)) - 1) downto 0) 	:= (others => '0');	
+--   signal cur_wr_page 		: unsigned((ceil(log(Page_size)) - 1) downto 0) 	:= (others => '0');	
+--	signal state_RAM 			: memory_state := idle;	
+--	signal state_ROM 			: memory_state := idle;
+---------------COMPONENTS-----------------------------------------------------------------
+--	COMPONENT SinglePortROM  
+--		PORT ( 
+--				address		: IN STD_LOGIC_VECTOR ((Sample_size - 1) DOWNTO 0);
+--				clock			: IN STD_LOGIC  	:= '1';
+--				q				: OUT STD_LOGIC_VECTOR ((Sample_size - 1) DOWNTO 0)
+--			); 
+--	END COMPONENT ;	
+--	
+--	COMPONENT DualPortRAM  
+--		PORT ( 
+--				clock			: IN STD_LOGIC  := '1';
+--				data			: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+--				rdaddress	: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+--				wraddress	: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+--				wren			: IN STD_LOGIC  := '0';
+--				q				: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+--			); 
+--	END COMPONENT ;
+--
+--	COMPONENT Edge_selector  
+--		PORT ( 
+--				Input  		: in STD_LOGIC ; 
+--				CLK_200MHz  : in STD_LOGIC ; 
+--				Fall  		: out STD_LOGIC ; 
+--				Rise  		: out STD_LOGIC 
+--				); 
+--	END COMPONENT ; 
+--	
+--	COMPONENT Frequency_divider  
+--		PORT ( 
+--				Counts  		: in std_logic_vector (17 downto 0) ; 
+--				Output  		: out STD_LOGIC ; 
+--				CLK  			: in STD_LOGIC ; 
+--				Enable  		: in STD_LOGIC 
+--				); 
+--  END COMPONENT ; 
+--------------------BEGIN------------------------------------------	
+--begin
+--------------------MODULES----------------------------------------
+--		SinglePortROM_module  : SinglePortROM  
+--    PORT MAP ( 
+--			address   => address_ROM  ,
+--			clock   	 => clk_t  ,
+--			q   		 => data_ROM_to_RAM  
+--		);
+--		
+--		DualPortRAM_module  : DualPortRAM  
+--    PORT MAP (	
+--
+--			rdaddress  	=> address_RAM_r  ,
+--			wraddress  	=> address_RAM_w  ,
+--			clken			=> RAM_enable, 
+--			clock			=> clk_t ,
+--			data			=> data_ROM_to_RAM ,
+--			wren			=> wr_RAM_enable ,
+--			q   			=> data_RAM_to_Out  
+--		);
+--		
+--		Edge_selector_module  : Edge_selector  
+--    PORT MAP ( 
+--			Input   		=> Enable  ,
+--			CLK_200MHz  => clk_t  ,
+--			Fall   		=> Fall  ,
+--			Rise   		=> Rise   
+--		);
+--		
+--		Frequency_divider_module  : Frequency_divider  
+--    PORT MAP ( 
+--      Counts   => Counts_t  ,
+--      Output   => divided_clock  ,
+--      CLK   	=> clk_t  ,
+--      Enable   => '1'   
+--		) ; 
+--		
+------------simple logic outside processes
+--		clk_t <= CLK;
+--		Output <= data_RAM_to_Out;
+--		address_RAM_w <= std_logic_vector(RAM_Counter_w + to_unsigned(Page_size * w_addr_offset_RAM));
+--		address_RAM_r <= std_logic_vector(RAM_Counter_r + to_unsigned(Page_size * r_addr_offset_RAM));		
+--		address_ROM <= std_logic_vector(ROM_Counter);	
+--		
+------------LOAD_RAM_PROCESS---------------------------------
+----	Load_RAM : process (clk_t)
+----	begin
+----		if rising_edge(clk_t) then
+----			case state_ROM is
+----			
+----				when operate =>
+----					
+----					if RAM_Counter_w = 0 then						
+----						RAM_Counter_w <= to_unsigned((Page_size - 1),Sample_size);	
+----						
+----						if w_addr_offset_RAM = '0' then
+----							w_addr_offset_RAM <= (Buffered_pages - 1);
+----						else 
+----							w_addr_offset_RAM = w_addr_offset_RAM - 1;
+----						end if;
+----						
+----						state_ROM <= idle;
+----					else
+----						RAM_Counter_w <= RAM_Counter_w - 1;
+----					end if;
+----					
+----					ROM_Counter <= ROM_Counter - 1;
+----					if ROM_Counter = 1 then
+----						ROM_Counter <= unsigned(ROM_Counter_load);
+----					end if;
+----					
+----				when idle =>
+----					if load_new_page = '1' then						
+----						state_ROM <= operate;
+----						load_new_page <= '0';
+----					end if;
+----					
+----			end case;
+----		end if;			
+----    end process Load_RAM;
+----		
+------------------MAIN_PROCESS---------------------------------------------
+----	Main : process (clk_t)
+----	begin
+----		if rising_edge(clk_t) then
+----		
+----			case state_RAM is
+----			
+----				when count =>
+----				
+----					if Fall = '1' then
+----						RAM_Counter_r <= to_unsigned(Zero_address,Sample_size);
+----						state <= idle;
+----					else
+----						if divided_clock = '1' then
+----							RAM_Counter_r <= RAM_Counter_r - 1;
+----						end if;
+----						
+----						if RAM_Counter_r = 1 then
+----							RAM_Counter_r <= unsigned(ROM_Counter_load);     
+----						end if;
+----					end if;
+----					
+----				when idle =>
+----					if Rise = '1' then						
+----						Counter <= unsigned(ROM_Counter_load);
+----						state <= count;   
+----					end if;
+----				
+----					
+----			end case;
+----		end if;			
+----    end process Main;
+--	
+--end rtl;

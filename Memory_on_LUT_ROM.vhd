@@ -1,0 +1,127 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+use IEEE.NUMERIC_STD.ALL;
+
+entity Memory_on_LUT_ROM is
+	port (
+		CLK				: in std_logic;
+		Enable			: in std_logic;	-- '0' - idle/force zero; '1' - standart memory work
+		Output			: out std_logic_vector (7 downto 0);
+		Counter_load	: in std_logic_vector (7 downto 0):= std_logic_vector(to_unsigned(255, 8));
+		Counts_t   		: in std_logic_vector (17 downto 0) := (others => '0') 
+	);
+end Memory_on_LUT_ROM;
+
+architecture rtl of Memory_on_LUT_ROM is
+
+	type memory_state is (idle, count);
+		
+-- constant Counter_load 	: natural := 255;
+	constant Sample_size		: natural := 8;
+	constant Zero_address	: natural := 0;
+	constant FrDev_size		: natural := 18;
+	
+--	constant Enable_size		: natural := 3;
+	
+	signal clk_t 				: std_logic := '0';
+	signal divided_clock		: std_logic := '0';
+	signal Fall 				: std_logic	:= '0';
+	signal Rise 				: std_logic	:= '0';
+--	signal divider_enable	: std_logic	:= '1';
+--	signal Counts_t   		: std_logic_vector ((FrDev_size - 1) downto 0) := (others => '0') ; 
+	signal address_t			: std_logic_vector ((Sample_size - 1) downto 0) := (others => '0');
+	signal data_t				: std_logic_vector ((Sample_size - 1) downto 0) := (others => '0');
+   signal Counter 			: unsigned(7 downto 0) := to_unsigned(Zero_address, 8);	
+	signal state 				: memory_state := idle;
+	
+	COMPONENT SinglePortROM  
+		PORT ( 
+				address		: IN STD_LOGIC_VECTOR ((Sample_size - 1) DOWNTO 0);
+				clock			: IN STD_LOGIC  := '1';
+				q				: OUT STD_LOGIC_VECTOR ((Sample_size - 1) DOWNTO 0)
+			); 
+	END COMPONENT ;
+
+	COMPONENT Edge_selector  
+		PORT ( 
+				Input  		: in STD_LOGIC ; 
+				CLK_200MHz  : in STD_LOGIC ; 
+				Fall  		: out STD_LOGIC ; 
+				Rise  		: out STD_LOGIC 
+				); 
+	END COMPONENT ; 
+	
+	COMPONENT Frequency_divider  
+		PORT ( 
+				Counts  		: in std_logic_vector (17 downto 0) ; 
+				Output  		: out STD_LOGIC ; 
+				CLK  			: in STD_LOGIC ; 
+				Enable  		: in STD_LOGIC 
+				); 
+  END COMPONENT ; 
+	
+begin
+
+		SinglePortROM_module  : SinglePortROM  
+    PORT MAP ( 
+			address   => address_t  ,
+			clock   	 => clk_t  ,
+			q   		 => data_t  
+		);
+		
+		Edge_selector_module  : Edge_selector  
+    PORT MAP ( 
+			Input   => Enable  ,
+			CLK_200MHz   => clk_t  ,
+			Fall   => Fall  ,
+			Rise   => Rise   
+		);
+		
+		Frequency_divider_module  : Frequency_divider  
+    PORT MAP ( 
+      Counts   => Counts_t  ,
+      Output   => divided_clock  ,
+      CLK   	=> clk_t  ,
+      Enable   => '1'   
+		) ; 
+		
+		clk_t <= CLK;
+		Output <= data_t;
+		address_t <= std_logic_vector(Counter);	
+		
+		
+	--Main process
+	Main : process (clk_t)
+	begin
+		if rising_edge(clk_t) then
+		
+			case state is
+			
+				when count =>
+				
+					if Fall = '1' then
+						Counter <= to_unsigned(Zero_address,Sample_size);
+						state <= idle;
+					else
+						if divided_clock = '1' then
+							Counter <= Counter - 1;
+						end if;
+						
+						if Counter = 1 then
+							Counter <= unsigned(Counter_load);     
+						end if;
+					end if;
+					
+				when idle =>
+					if Rise = '1' then						
+						Counter <= unsigned(Counter_load);
+						state <= count;   
+					end if;
+				
+					
+			end case;
+		end if;			
+    end process Main;
+	
+end rtl;

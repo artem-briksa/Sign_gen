@@ -1,0 +1,40 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+use IEEE.NUMERIC_STD.ALL;
+
+entity Signal_generator is
+    port (
+        CLK_200MHz : in std_logic;
+        dout : out std_logic_vector(13 downto 0)
+    );
+end Signal_generator;
+
+architecture rtl of Signal_generator is
+    constant BitsPerOutPut : natural := 14;
+    constant counts : natural := 100_000_000 / 1_000_000 * 2 + 1;   -- generating frequancy is in Hz in the denominator
+    constant step : integer := (2**BitsPerOutPut) / counts;
+    signal Counter : unsigned(24 downto 0) := to_unsigned(counts, 25);
+    
+    signal DataOut : unsigned(BitsPerOutPut - 1 downto 0) := (others => '0');
+begin
+    dout <= std_logic_vector(DataOut);
+    
+    Clock : process (CLK_200MHz)
+    begin
+        if rising_edge(CLK_200MHz) then
+        
+            Counter <= Counter - 1;
+--          DataOut <= std_logic_vector(to_unsigned((to_integer(unsigned(DataOut)) + step),BitsPerOutPut));      --for saw signal
+          DataOut <= DataOut + step;      --for saw signal
+            if Counter = 0 then
+            
+              DataOut <= (others => '0');     --  for saw signal
+--                DataOut (BitsPerOutPut - 1 downto 0) <= not DataOut(BitsPerOutPut - 1 downto 0);
+                Counter <= to_unsigned(counts, 25);
+        
+            end if;
+        end if;
+    end process Clock;
+end rtl;
+

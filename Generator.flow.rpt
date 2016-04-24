@@ -1,0 +1,160 @@
+Flow report for Generator
+Sun Apr 24 13:12:38 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Flow Summary                                                                 ;
++---------------------------+--------------------------------------------------+
+; Flow Status               ; Successful - Sun Apr 24 13:12:37 2016            ;
+; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name             ; Generator                                        ;
+; Top-level Entity Name     ; SinglePortRAM_handcrafted                        ;
+; Family                    ; Cyclone                                          ;
+; Device                    ; EP1C6Q240C6                                      ;
+; Timing Models             ; Final                                            ;
+; Total logic elements      ; 0                                                ;
+; Total pins                ; 26                                               ;
+; Total virtual pins        ; 0                                                ;
+; Total memory bits         ; 2,048                                            ;
+; Total PLLs                ; 0                                                ;
++---------------------------+--------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 04/24/2016 13:12:36 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; Generator           ;
++-------------------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                   ;
++--------------------------------------+----------------------------------------------------+---------------+---------------------------+----------------------------+
+; Assignment Name                      ; Value                                              ; Default Value ; Entity Name               ; Section Id                 ;
++--------------------------------------+----------------------------------------------------+---------------+---------------------------+----------------------------+
+; COMPILER_SIGNATURE_ID                ; 189607940373847.146149275508996                    ; --            ; --                        ; --                         ;
+; EDA_DESIGN_INSTANCE_NAME             ; uut                                                ; --            ; --                        ; GeneratorTB                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                 ; --            ; --                        ; Edge_selector              ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                 ; --            ; --                        ; Edge_attempt_2             ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                 ; --            ; --                        ; Frequency_divider_TB       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                 ; --            ; --                        ; Memory_on_lut_rom_TB       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                 ; --            ; --                        ; Memory_on_LUT_RAM_1Port_TB ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                                ; --            ; --                        ; eda_simulation             ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; Memory_on_LUT_RAM_1Port_TB                         ; --            ; --                        ; eda_simulation             ;
+; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                               ; --            ; --                        ; eda_simulation             ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (VHDL)                             ; <None>        ; --                        ; --                         ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                                    ; --            ; --                        ; eda_simulation             ;
+; EDA_TEST_BENCH_FILE                  ; GeneratorTB.vhd                                    ; --            ; --                        ; GeneratorTB                ;
+; EDA_TEST_BENCH_FILE                  ; GeneratorTB.vhd                                    ; --            ; --                        ; GeneratorTB2               ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/Rise_edge_TB.vhd               ; --            ; --                        ; Edge_selector              ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/Edge_selector_TB.vhd           ; --            ; --                        ; Edge_attempt_2             ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/Frequency_divider_TB.vhd       ; --            ; --                        ; Frequency_divider_TB       ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/Memory_on_lut_rom_TB.vhd       ; --            ; --                        ; Memory_on_lut_rom_TB       ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/Memory_on_LUT_RAM_1Port_TB.vhd ; --            ; --                        ; Memory_on_LUT_RAM_1Port_TB ;
+; EDA_TEST_BENCH_MODULE_NAME           ; GeneratorTB                                        ; --            ; --                        ; GeneratorTB                ;
+; EDA_TEST_BENCH_MODULE_NAME           ; Edge_selector                                      ; --            ; --                        ; Edge_selector              ;
+; EDA_TEST_BENCH_MODULE_NAME           ; Edge_selector_TB                                   ; --            ; --                        ; Edge_attempt_2             ;
+; EDA_TEST_BENCH_MODULE_NAME           ; Frequency_divider_TB                               ; --            ; --                        ; Frequency_divider_TB       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; Memory_on_lut_rom_TB                               ; --            ; --                        ; Memory_on_lut_rom_TB       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; Memory_on_LUT_RAM_1Port_TB                         ; --            ; --                        ; Memory_on_LUT_RAM_1Port_TB ;
+; EDA_TEST_BENCH_NAME                  ; GeneratorTB                                        ; --            ; --                        ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; Edge_selector                                      ; --            ; --                        ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; Edge_attempt_2                                     ; --            ; --                        ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; Frequency_divider_TB                               ; --            ; --                        ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; Memory_on_lut_rom_TB                               ; --            ; --                        ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; Memory_on_LUT_RAM_1Port_TB                         ; --            ; --                        ; eda_simulation             ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 10 us                                              ; --            ; --                        ; Edge_selector              ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 10 us                                              ; --            ; --                        ; Edge_attempt_2             ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 11 us                                              ; --            ; --                        ; Frequency_divider_TB       ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 11 us                                              ; --            ; --                        ; Memory_on_lut_rom_TB       ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 10 us                                              ; --            ; --                        ; Memory_on_LUT_RAM_1Port_TB ;
+; FMAX_REQUIREMENT                     ; 200 MHz                                            ; --            ; --                        ; --                         ;
+; IP_TOOL_NAME                         ; ALTPLL                                             ; --            ; --                        ; --                         ;
+; IP_TOOL_NAME                         ; ROM: 1-PORT                                        ; --            ; --                        ; --                         ;
+; IP_TOOL_NAME                         ; RAM: 1-PORT                                        ; --            ; --                        ; --                         ;
+; IP_TOOL_NAME                         ; RAM: 2-PORT                                        ; --            ; --                        ; --                         ;
+; IP_TOOL_VERSION                      ; 13.0                                               ; --            ; --                        ; --                         ;
+; IP_TOOL_VERSION                      ; 13.0                                               ; --            ; --                        ; --                         ;
+; IP_TOOL_VERSION                      ; 13.0                                               ; --            ; --                        ; --                         ;
+; IP_TOOL_VERSION                      ; 13.0                                               ; --            ; --                        ; --                         ;
+; MISC_FILE                            ; PLL_inst.vhd                                       ; --            ; --                        ; --                         ;
+; MISC_FILE                            ; PLL.cmp                                            ; --            ; --                        ; --                         ;
+; MISC_FILE                            ; PLL.ppf                                            ; --            ; --                        ; --                         ;
+; MISC_FILE                            ; PLL_syn.v                                          ; --            ; --                        ; --                         ;
+; MISC_FILE                            ; SinglePortROM.cmp                                  ; --            ; --                        ; --                         ;
+; MISC_FILE                            ; SinglePortRAM.cmp                                  ; --            ; --                        ; --                         ;
+; MISC_FILE                            ; DualPortRAM.cmp                                    ; --            ; --                        ; --                         ;
+; PARTITION_COLOR                      ; 16764057                                           ; --            ; SinglePortRAM_handcrafted ; Top                        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING                              ; --            ; SinglePortRAM_handcrafted ; Top                        ;
+; PARTITION_NETLIST_TYPE               ; SOURCE                                             ; --            ; SinglePortRAM_handcrafted ; Top                        ;
+; TOP_LEVEL_ENTITY                     ; SinglePortRAM_handcrafted                          ; Generator     ; --                        ; --                         ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS   ; Off                                                ; --            ; --                        ; eda_blast_fpga             ;
+; VHDL_SHOW_LMF_MAPPING_MESSAGES       ; Off                                                ; --            ; --                        ; --                         ;
++--------------------------------------+----------------------------------------------------+---------------+---------------------------+----------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 488 MB              ; 00:00:02                           ;
+; Total                ; 00:00:02     ; --                      ; --                  ; 00:00:02                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; Artsiom-PC       ; Windows 7 ; 6.2        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off Generator -c Generator
+
+
+

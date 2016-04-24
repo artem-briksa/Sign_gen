@@ -1,0 +1,3 @@
+derive_clock_uncertainty
+create_clock -period 100MHz -name {CLK_100MHz} [get_ports {CLK_100MHz}]
+create_clock -period 200MHz -name {CLK_200MHz_out} [get_ports {CLK_200MHz_out}]
