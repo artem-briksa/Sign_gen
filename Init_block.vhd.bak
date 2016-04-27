@@ -1,0 +1,16 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity Init_block is
+	port (
+		CLK				: in std_logic;
+ 
+	);
+end Init_block;
+
+architecture rtl of Init_block is
+
+begin
+
+end rtl;

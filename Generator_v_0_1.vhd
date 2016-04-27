@@ -36,16 +36,21 @@ architecture rtl of Generator_v_0_1 is
 	constant d_init		: integer := 1;	-- '1' - init memory
 	constant d_count		: integer := 2;	-- '2' - begin to count
 	constant d_idle		: integer := 3;	-- '3' - idle
+	constant FrDev_size	: natural := 18;
  ----SIGNALS--------------------------------------------------------------------
 	signal we   			: STD_LOGIC := '0'  ; 						--write enable
 	signal q   				: std_logic_vector ((DATA_WIDTH - 1) downto 0) ; 	--quit data
 	signal data   			: std_logic_vector ((DATA_WIDTH - 1) downto 0) ; 	--init data
 	signal clk   			: STD_LOGIC  ; 
 	signal addr   			: natural range 0 to 2**ADDR_WIDTH - 1 ;
+	
 	signal state 			: generator_state := idle;
 	signal busy 			: STD_LOGIC := '0';
 	signal driver_t		: driver_subtype := driver_subtype(to_unsigned(3,DRIVER_WIDTH));	
 	signal Counter   		: natural range 0 to 2**ADDR_WIDTH - 1 := Counter_from;
+	
+	signal divided_clock	: std_logic := '0';
+	signal Counts_t   	: std_logic_vector ((FrDev_size - 1) downto 0) := std_logic_vector(to_unsigned(5,FrDev_size)) ; 
 		
  ----COMPONENTS-----------------------------------------------------------------
   component SinglePortRAM_handcrafted  
@@ -58,7 +63,16 @@ architecture rtl of Generator_v_0_1 is
       data  	: in std_logic_vector ((DATA_WIDTH - 1) downto 0) ; 
       clk  		: in STD_LOGIC ; 
       addr  	: in natural range 0 to 2**ADDR_WIDTH - 1 ); 
-  end component ; 
+  end component ; 	
+  
+  COMPONENT Frequency_divider  
+		PORT ( 
+				Counts  		: in std_logic_vector (17 downto 0) ; 
+				Output  		: out STD_LOGIC ; 
+				CLK  			: in STD_LOGIC ; 
+				Enable  		: in STD_LOGIC 
+				); 
+  END COMPONENT ;
  ----BEGIN----------------------------------------------------------------------
   BEGIN
   
@@ -73,6 +87,14 @@ architecture rtl of Generator_v_0_1 is
       data  => data  ,
       clk   => clk  ,
       addr  => addr   ) ;
+		
+	Frequency_divider_module  : Frequency_divider  
+    PORT MAP ( 
+      Counts   => Counts_t  ,
+      Output   => divided_clock  ,
+      CLK   	=> clk  ,
+      Enable   => '1'   
+		) ; 
  ----SIMPLE_LOGIC----------------------------------------------------------------------
 	addr <= Counter;
 	clk <= CLK_200MHz;
@@ -117,18 +139,21 @@ architecture rtl of Generator_v_0_1 is
 								state <= idle;
 							when others =>
 								----"Init block"-----------
-								if Counter = 0 then
-									we <= '0';
-									Counter <= Counter_from;
-									state <= idle;
-								else
-									if Counter > (2**(ADDR_WIDTH - 1) - 1) then
-										data <= std_logic_vector(to_unsigned((2**ADDR_WIDTH - 1) - Counter, DATA_WIDTH));
-									else 
-										data <= std_logic_vector(to_unsigned(Counter, DATA_WIDTH));
+									if Counter = 0 then
+										we <= '0';
+										Counter <= Counter_from;
+										state <= idle;
+									else				
+										if Counter > (2**(ADDR_WIDTH - 1) - 1) then
+											data <= std_logic_vector(to_unsigned((2**ADDR_WIDTH - 1) - Counter, DATA_WIDTH));
+										else 
+											data <= std_logic_vector(to_unsigned(Counter, DATA_WIDTH));
+										end if;
+										
+										if divided_clock = '1' then				
+											Counter <= Counter - 1;
+										end if;										
 									end if;
-									Counter <= Counter - 1;
-								end if;
 								----------------------------							
 						end case;
 
