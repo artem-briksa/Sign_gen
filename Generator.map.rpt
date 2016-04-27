@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Generator
-Wed Apr 27 18:49:51 2016
+Wed Apr 27 21:28:49 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -15,20 +15,16 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. State Machine - |Generator_v_0_1|state
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Registers Packed Into Inferred Megafunctions
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0|altsyncram_vna1:auto_generated
- 17. Parameter Settings for User Entity Instance: Top-level Entity: |Generator_v_0_1
- 18. Parameter Settings for User Entity Instance: SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module
- 19. Parameter Settings for Inferred Entity Instance: SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0
- 20. altsyncram Parameter Settings by Entity Instance
- 21. Port Connectivity Checks: "Frequency_divider:Frequency_divider_module"
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+ 10. General Register Statistics
+ 11. Registers Packed Into Inferred Megafunctions
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0|altsyncram_vna1:auto_generated
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |Generator_v_0_1
+ 15. Parameter Settings for User Entity Instance: SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module
+ 16. Parameter Settings for Inferred Entity Instance: SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -54,13 +50,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +-----------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Wed Apr 27 18:49:51 2016            ;
+; Analysis & Synthesis Status ; Successful - Wed Apr 27 21:28:49 2016            ;
 ; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name               ; Generator                                        ;
 ; Top-level Entity Name       ; Generator_v_0_1                                  ;
 ; Family                      ; Cyclone                                          ;
-; Total logic elements        ; 101                                              ;
-; Total pins                  ; 13                                               ;
+; Total logic elements        ; 45                                               ;
+; Total pins                  ; 30                                               ;
 ; Total virtual pins          ; 0                                                ;
 ; Total memory bits           ; 2,048                                            ;
 ; Total PLLs                  ; 0                                                ;
@@ -172,8 +168,6 @@ applicable agreement for further details.
 +--------------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path                             ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                                              ; Library ;
 +--------------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; Edge_selector.vhd                                            ; yes             ; User VHDL File                                        ; C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Edge_selector.vhd                                            ;         ;
-; Frequency_divider.vhd                                        ; yes             ; User VHDL File                                        ; C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Frequency_divider.vhd                                        ;         ;
 ; SinglePortRAM_handcrafted.vhd                                ; yes             ; User VHDL File                                        ; C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/SinglePortRAM_handcrafted.vhd                                ;         ;
 ; Generator_v_0_1.vhd                                          ; yes             ; User VHDL File                                        ; C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Generator_v_0_1.vhd                                          ;         ;
 ; altsyncram.tdf                                               ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                                                                          ;         ;
@@ -195,34 +189,34 @@ applicable agreement for further details.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Total logic elements                        ; 101        ;
-;     -- Combinational with no register       ; 63         ;
-;     -- Register only                        ; 2          ;
-;     -- Combinational with a register        ; 36         ;
+; Total logic elements                        ; 45         ;
+;     -- Combinational with no register       ; 33         ;
+;     -- Register only                        ; 0          ;
+;     -- Combinational with a register        ; 12         ;
 ;                                             ;            ;
 ; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 41         ;
-;     -- 3 input functions                    ; 4          ;
-;     -- 2 input functions                    ; 43         ;
-;     -- 1 input functions                    ; 10         ;
-;     -- 0 input functions                    ; 1          ;
+;     -- 4 input functions                    ; 18         ;
+;     -- 3 input functions                    ; 5          ;
+;     -- 2 input functions                    ; 21         ;
+;     -- 1 input functions                    ; 1          ;
+;     -- 0 input functions                    ; 0          ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 77         ;
-;     -- arithmetic mode                      ; 24         ;
+;     -- normal mode                          ; 38         ;
+;     -- arithmetic mode                      ; 7          ;
 ;     -- qfbk mode                            ; 0          ;
 ;     -- register cascade mode                ; 0          ;
-;     -- synchronous clear/load mode          ; 2          ;
+;     -- synchronous clear/load mode          ; 10         ;
 ;     -- asynchronous clear/load mode         ; 0          ;
 ;                                             ;            ;
-; Total registers                             ; 38         ;
-; Total logic cells in carry chains           ; 26         ;
-; I/O pins                                    ; 13         ;
+; Total registers                             ; 12         ;
+; Total logic cells in carry chains           ; 8          ;
+; I/O pins                                    ; 30         ;
 ; Total memory bits                           ; 2048       ;
 ; Maximum fan-out node                        ; CLK_200MHz ;
-; Maximum fan-out                             ; 46         ;
-; Total fan-out                               ; 427        ;
-; Average fan-out                             ; 3.50       ;
+; Maximum fan-out                             ; 20         ;
+; Total fan-out                               ; 266        ;
+; Average fan-out                             ; 3.20       ;
 +---------------------------------------------+------------+
 
 
@@ -231,8 +225,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                      ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                             ; Library Name ;
 +-----------------------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |Generator_v_0_1                                                ; 101 (59)    ; 38           ; 2048        ; 13   ; 0            ; 63 (40)      ; 2 (0)             ; 36 (19)          ; 26 (8)          ; 0 (0)      ; |Generator_v_0_1                                                                                                                ; work         ;
-;    |Frequency_divider:Frequency_divider_module|                 ; 42 (42)     ; 19           ; 0           ; 0    ; 0            ; 23 (23)      ; 2 (2)             ; 17 (17)          ; 18 (18)         ; 0 (0)      ; |Generator_v_0_1|Frequency_divider:Frequency_divider_module                                                                     ; work         ;
+; |Generator_v_0_1                                                ; 45 (45)     ; 12           ; 2048        ; 30   ; 0            ; 33 (33)      ; 0 (0)             ; 12 (12)          ; 8 (8)           ; 0 (0)      ; |Generator_v_0_1                                                                                                                ; work         ;
 ;    |SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module| ; 0 (0)       ; 0            ; 2048        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Generator_v_0_1|SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module                                                     ; work         ;
 ;       |altsyncram:ram_rtl_0|                                    ; 0 (0)       ; 0            ; 2048        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Generator_v_0_1|SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0                                ; work         ;
 ;          |altsyncram_vna1:auto_generated|                       ; 0 (0)       ; 0            ; 2048        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Generator_v_0_1|SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0|altsyncram_vna1:auto_generated ; work         ;
@@ -261,61 +254,19 @@ Encoding Type:  One-Hot
 +----------------+------------+----------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                  ;
-+--------------------------------------------------------------------------------------------+----------------------------------------+
-; Register name                                                                              ; Reason for Removal                     ;
-+--------------------------------------------------------------------------------------------+----------------------------------------+
-; Frequency_divider:Frequency_divider_module|Edge_selector:Edge_selector_module|FallSelector ; Lost fanout                            ;
-; Frequency_divider:Frequency_divider_module|Edge_selector:Edge_selector_module|RiseSelector ; Stuck at VCC due to stuck port data_in ;
-; Frequency_divider:Frequency_divider_module|Edge_selector:Edge_selector_module|Fall         ; Stuck at GND due to stuck port data_in ;
-; Frequency_divider:Frequency_divider_module|Edge_selector:Edge_selector_module|Rise         ; Stuck at GND due to stuck port data_in ;
-; Frequency_divider:Frequency_divider_module|state                                           ; Stuck at GND due to stuck port data_in ;
-; data[7]                                                                                    ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 6                                                      ;                                        ;
-+--------------------------------------------------------------------------------------------+----------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                 ;
-+--------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------+
-; Register name                                                                              ; Reason for Removal        ; Registers Removed due to This Register                                             ;
-+--------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------+
-; Frequency_divider:Frequency_divider_module|Edge_selector:Edge_selector_module|RiseSelector ; Stuck at VCC              ; Frequency_divider:Frequency_divider_module|Edge_selector:Edge_selector_module|Rise ;
-;                                                                                            ; due to stuck port data_in ;                                                                                    ;
-+--------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------+
-
-
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 38    ;
+; Total registers                              ; 12    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 2     ;
+; Number of registers using Synchronous Load   ; 10    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 15    ;
+; Number of registers using Clock Enable       ; 8     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; Counter[0]                             ; 9       ;
-; Counter[1]                             ; 4       ;
-; Counter[2]                             ; 4       ;
-; Counter[3]                             ; 4       ;
-; Counter[4]                             ; 4       ;
-; Counter[5]                             ; 4       ;
-; Counter[6]                             ; 4       ;
-; Counter[7]                             ; 10      ;
-; Total number of inverted registers = 8 ;         ;
-+----------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -332,8 +283,7 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |Generator_v_0_1|data[0]    ;
-; 12:1               ; 8 bits    ; 64 LEs        ; 8 LEs                ; 56 LEs                 ; Yes        ; |Generator_v_0_1|Counter[0] ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |Generator_v_0_1|Counter[0] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
 
@@ -450,19 +400,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+---------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------+
-; Port Connectivity Checks: "Frequency_divider:Frequency_divider_module" ;
-+---------------+-------+----------+-------------------------------------+
-; Port          ; Type  ; Severity ; Details                             ;
-+---------------+-------+----------+-------------------------------------+
-; counts[17..3] ; Input ; Info     ; Stuck at GND                        ;
-; counts[2]     ; Input ; Info     ; Stuck at VCC                        ;
-; counts[1]     ; Input ; Info     ; Stuck at GND                        ;
-; counts[0]     ; Input ; Info     ; Stuck at VCC                        ;
-; enable        ; Input ; Info     ; Stuck at VCC                        ;
-+---------------+-------+----------+-------------------------------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -478,7 +415,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Apr 27 18:49:49 2016
+    Info: Processing started: Wed Apr 27 21:28:47 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Generator -c Generator
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file generatortb.vhd
@@ -528,11 +465,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file init_bl
     Info (12022): Found design unit 1: Init_block-rtl
     Info (12023): Found entity 1: Init_block
 Info (12127): Elaborating entity "Generator_v_0_1" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Generator_v_0_1.vhd(48): object "busy" assigned a value but never read
-Warning (10540): VHDL Signal Declaration warning at Generator_v_0_1.vhd(53): used explicit default value for signal "Counts_t" because signal was never assigned a value
+Warning (10036): Verilog HDL or VHDL warning at Generator_v_0_1.vhd(55): object "busy" assigned a value but never read
 Info (12128): Elaborating entity "SinglePortRAM_handcrafted" for hierarchy "SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module"
-Info (12128): Elaborating entity "Frequency_divider" for hierarchy "Frequency_divider:Frequency_divider_module"
-Info (12128): Elaborating entity "Edge_selector" for hierarchy "Frequency_divider:Frequency_divider_module|Edge_selector:Edge_selector_module"
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|ram_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
@@ -559,18 +493,17 @@ Info (12133): Instantiated megafunction "SinglePortRAM_handcrafted:SinglePortRAM
     Info (12134): Parameter "INIT_FILE" = "db/Generator.ram0_SinglePortRAM_handcrafted_7ca5f323.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_vna1.tdf
     Info (12023): Found entity 1: altsyncram_vna1
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 122 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
+Info (21057): Implemented 83 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 22 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 101 logic cells
+    Info (21061): Implemented 45 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 492 megabytes
-    Info: Processing ended: Wed Apr 27 18:49:51 2016
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 488 megabytes
+    Info: Processing ended: Wed Apr 27 21:28:49 2016
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

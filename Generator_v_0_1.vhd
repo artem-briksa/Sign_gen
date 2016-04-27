@@ -19,7 +19,11 @@ entity Generator_v_0_1 is
 		Reset				: in std_logic;	--"1000" -- 8
 		Start				: in std_logic;	--"0100" -- 4
 		Stop				: in std_logic;	--"0010" -- 2
-		Load_data		: in std_logic		--"0001" -- 1
+		Load_data		: in std_logic;	--"0001" -- 1
+		
+		wr_data			: in std_logic_vector ((DATA_WIDTH - 1) downto 0);
+		wr_smpl			: in std_logic;
+		cnt_from			: in std_logic_vector ((ADDR_WIDTH - 1) downto 0)
 	);
 end Generator_v_0_1;
 
@@ -28,7 +32,6 @@ architecture rtl of Generator_v_0_1 is
 	type generator_state is (count, init_ram, idle);
 	subtype driver_subtype is std_logic_vector((DRIVER_WIDTH - 1) downto 0);
  ----CONSTANTS------------------------------------------------------------------ 
-	constant Counter_from: natural := 2**ADDR_WIDTH - 1;
 	constant Counter_to	: natural := 0; 
 --	constant d_init		: driver_subtype := driver_subtype(to_unsigned(1,DRIVER_WIDTH));	-- '1' - init memory
 --	constant d_count		: driver_subtype := driver_subtype(to_unsigned(2,DRIVER_WIDTH));	-- '2' - begin to count
@@ -39,18 +42,19 @@ architecture rtl of Generator_v_0_1 is
 	constant FrDev_size	: natural := 18;
  ----SIGNALS--------------------------------------------------------------------
 	signal we   			: STD_LOGIC := '0'  ; 						--write enable
+	signal Enable_wr		: STD_LOGIC := '0';
 	signal q   				: std_logic_vector ((DATA_WIDTH - 1) downto 0) ; 	--quit data
+	signal q_buff			: std_logic_vector ((DATA_WIDTH - 1) downto 0) ; 	--quit data
 	signal data   			: std_logic_vector ((DATA_WIDTH - 1) downto 0) ; 	--init data
 	signal clk   			: STD_LOGIC  ; 
 	signal addr   			: natural range 0 to 2**ADDR_WIDTH - 1 ;
+	
+	signal Counter_from	: natural := 2**ADDR_WIDTH - 1;
 	
 	signal state 			: generator_state := idle;
 	signal busy 			: STD_LOGIC := '0';
 	signal driver_t		: driver_subtype := driver_subtype(to_unsigned(3,DRIVER_WIDTH));	
 	signal Counter   		: natural range 0 to 2**ADDR_WIDTH - 1 := Counter_from;
-	
-	signal divided_clock	: std_logic := '0';
-	signal Counts_t   	: std_logic_vector ((FrDev_size - 1) downto 0) := std_logic_vector(to_unsigned(5,FrDev_size)) ; 
 		
  ----COMPONENTS-----------------------------------------------------------------
   component SinglePortRAM_handcrafted  
@@ -65,14 +69,6 @@ architecture rtl of Generator_v_0_1 is
       addr  	: in natural range 0 to 2**ADDR_WIDTH - 1 ); 
   end component ; 	
   
-  COMPONENT Frequency_divider  
-		PORT ( 
-				Counts  		: in std_logic_vector (17 downto 0) ; 
-				Output  		: out STD_LOGIC ; 
-				CLK  			: in STD_LOGIC ; 
-				Enable  		: in STD_LOGIC 
-				); 
-  END COMPONENT ;
  ----BEGIN----------------------------------------------------------------------
   BEGIN
   
@@ -82,27 +78,32 @@ architecture rtl of Generator_v_0_1 is
       DATA_WIDTH  => DATA_WIDTH  ,
       ADDR_WIDTH  => ADDR_WIDTH   )
     port map ( 
-      we   	=> we  ,
+      we   	=> Enable_wr  ,		--changed from "we"
       q   	=> q  ,
-      data  => data  ,
+      data  => wr_data  ,		--changed from "data"
       clk   => clk  ,
       addr  => addr   ) ;
-		
-	Frequency_divider_module  : Frequency_divider  
-    PORT MAP ( 
-      Counts   => Counts_t  ,
-      Output   => divided_clock  ,
-      CLK   	=> clk  ,
-      Enable   => '1'   
-		) ; 
+
  ----SIMPLE_LOGIC----------------------------------------------------------------------
 	addr <= Counter;
 	clk <= CLK_200MHz;
-	Dout <= q;
+	Enable_wr <= (wr_smpl and we);
+	Counter_from <= to_integer(unsigned(cnt_from));
 --	driver_t <= driver_subtype(unsigned(Driver));
 	driver_t <= Reset & Start & Stop & Load_data;
  ----PROCESSES----------------------------------------------------------------------
-		
+	Dout_control : process (q, state)
+    begin
+        --if rising_edge(CLK_200MHz) then
+			case state is	
+				when init_ram | idle =>	
+					Dout <= (others => '0');
+				when others =>
+					Dout <= q;
+				end case;
+			--end if;
+    end process Dout_control;
+	 
 	Main : process (CLK_200MHz)
     begin
         if rising_edge(CLK_200MHz) then
@@ -120,9 +121,10 @@ architecture rtl of Generator_v_0_1 is
 								busy <= '0';
 								state <= idle;
 							when others =>
-								Counter <= Counter - 1;
-								if (Counter = (Counter_to + 1)) then
-									Counter <= Counter_from;     
+								if Counter = Counter_to then
+									Counter <= Counter_from;
+								else 
+									Counter <= Counter - 1;									
 								end if;								
 						end case;
 					
@@ -143,14 +145,8 @@ architecture rtl of Generator_v_0_1 is
 										we <= '0';
 										Counter <= Counter_from;
 										state <= idle;
-									else				
-										if Counter > (2**(ADDR_WIDTH - 1) - 1) then
-											data <= std_logic_vector(to_unsigned((2**ADDR_WIDTH - 1) - Counter, DATA_WIDTH));
-										else 
-											data <= std_logic_vector(to_unsigned(Counter, DATA_WIDTH));
-										end if;
-										
-										if divided_clock = '1' then				
+									else												
+										if wr_smpl = '1' then				
 											Counter <= Counter - 1;
 										end if;										
 									end if;

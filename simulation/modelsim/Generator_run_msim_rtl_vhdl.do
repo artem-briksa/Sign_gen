@@ -5,8 +5,6 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vcom -93 -work work {C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Edge_selector.vhd}
-vcom -93 -work work {C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Frequency_divider.vhd}
 vcom -93 -work work {C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/SinglePortRAM_handcrafted.vhd}
 vcom -93 -work work {C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Generator_v_0_1.vhd}
 

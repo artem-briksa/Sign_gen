@@ -10,22 +10,6 @@
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Edge_selector.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity Edge_selector
-# -- Compiling architecture rtl of Edge_selector
-# vcom -93 -work work {C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Frequency_divider.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity Frequency_divider
-# -- Compiling architecture rtl of Frequency_divider
 # vcom -93 -work work {C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/SinglePortRAM_handcrafted.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
@@ -42,6 +26,8 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity Generator_v_0_1
 # -- Compiling architecture rtl of Generator_v_0_1
+# ** Warning: [9] C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Generator_v_0_1.vhd(57): (vcom-1013) Initial value of "Counter" depends on value of signal "Counter_from".
+# 
 # 
 # vcom -93 -work work {C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -67,28 +53,52 @@
 # Loading work.generator_v_0_1_tb(generator_v_0_1_tb_arch)
 # Loading work.generator_v_0_1(rtl)
 # Loading work.singleportram_handcrafted(rtl)
-# Loading work.frequency_divider(rtl)
-# Loading work.edge_selector(rtl)
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 # 
 #           File in use by: Artsiom  Hostname: ARTSIOM  ProcessID: 8464
 # 
-#           Attempting to use alternate WLF file "./wlft846wsb".
+#           Attempting to use alternate WLF file "./wlfth419bd".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlft846wsb
+#           Using alternate file: ./wlfth419bd
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 10 us
-add wave -position 2  sim:/generator_v_0_1_tb/DUT/busy
-add wave -position 0  sim:/generator_v_0_1_tb/DUT/state
-add wave -position end  sim:/generator_v_0_1_tb/DUT/divided_clock
-add wave -position end  sim:/generator_v_0_1_tb/DUT/data
+restart -f
+run
+vcom -93 -work work -O0 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity Generator_v_0_1_TB
+# -- Compiling architecture Generator_v_0_1_TB_arch of Generator_v_0_1_TB
+# ** Error: C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd(138): near "wait": expecting ';'
+# ** Error: C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd(169): VHDL Compiler exiting
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
+vcom -93 -work work -O0 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity Generator_v_0_1_TB
+# -- Compiling architecture Generator_v_0_1_TB_arch of Generator_v_0_1_TB
+restart -f
+# Loading work.generator_v_0_1_tb(generator_v_0_1_tb_arch)
+run
 restart -f
 run
 vcom -93 -work work -O0 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Generator_v_0_1.vhd
@@ -99,22 +109,34 @@ vcom -93 -work work -O0 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects
 # -- Loading package NUMERIC_STD
 # -- Compiling entity Generator_v_0_1
 # -- Compiling architecture rtl of Generator_v_0_1
-vcom -93 -work work -O0 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_textio
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity Generator_v_0_1_TB
-# -- Compiling architecture Generator_v_0_1_TB_arch of Generator_v_0_1_TB
-# Break key hit 
+# ** Warning: [9] C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Generator_v_0_1.vhd(57): (vcom-1013) Initial value of "Counter" depends on value of signal "Counter_from".
+# 
 restart -f
-# Loading work.generator_v_0_1_tb(generator_v_0_1_tb_arch)
 # Loading work.generator_v_0_1(rtl)
 run
+add wave -position end  sim:/generator_v_0_1_tb/DUT/Counter
+restart -f
+run
+vcom -93 -work work -O0 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity Generator_v_0_1_TB
+# -- Compiling architecture Generator_v_0_1_TB_arch of Generator_v_0_1_TB
+restart -f
+# Loading work.generator_v_0_1_tb(generator_v_0_1_tb_arch)
+run
+add wave -position 1  sim:/generator_v_0_1_tb/DUT/state
+restart -f
+run
+add wave -position end  sim:/generator_v_0_1_tb/DUT/Counter_from
+restart -f
+run
 vcom -93 -work work -O0 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
@@ -140,17 +162,7 @@ vcom -93 -work work -O0 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity Generator_v_0_1_TB
 # -- Compiling architecture Generator_v_0_1_TB_arch of Generator_v_0_1_TB
-vcom -93 -work work -O0 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_textio
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity Generator_v_0_1_TB
-# -- Compiling architecture Generator_v_0_1_TB_arch of Generator_v_0_1_TB
 restart -f
 # Loading work.generator_v_0_1_tb(generator_v_0_1_tb_arch)
 run
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/wave.do

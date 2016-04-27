@@ -13,26 +13,38 @@ ENTITY Generator_v_0_1_TB  IS
 END ; 
  
 ARCHITECTURE Generator_v_0_1_TB_arch OF Generator_v_0_1_TB IS
-	constant period : time := 10 ns;
+	constant period 		: time := 10 ns;
+	constant wr_wait_clock 	: natural := 5;
 
---  SIGNAL Driver   :  std_logic_vector ((DRIVER_WIDTH - 1) downto 0)  ; 
-	SIGNAL Reset	: std_logic := '0';
-	SIGNAL Start	: std_logic := '0';
-	SIGNAL Stop		: std_logic := '0';
+--  SIGNAL Driver   	:  std_logic_vector ((DRIVER_WIDTH - 1) downto 0)  ; 
+	SIGNAL Reset		: std_logic := '0';
+	SIGNAL Start		: std_logic := '0';
+	SIGNAL Stop			: std_logic := '0';
 	SIGNAL Load_data	: std_logic := '0';
-	SIGNAL Dout   :  std_logic_vector ((DATA_WIDTH - 1) downto 0)  ; 
-	SIGNAL CLK_200MHz   :  STD_LOGIC  ; 
+	SIGNAL Dout   		: std_logic_vector ((DATA_WIDTH - 1) downto 0) := (others => '0')  ; 
+	
+	SIGNAL wr_smpl		: std_logic := '0';
+	SIGNAL wr_data   	: std_logic_vector ((DATA_WIDTH - 1) downto 0) := (others => '0') ; 
+	SIGNAL wr_addr   	: std_logic_vector ((ADDR_WIDTH - 1) downto 0) := (others => '0') ; 
+	
+	SIGNAL CLK_200MHz   : STD_LOGIC  ; 
+	
   COMPONENT Generator_v_0_1  
     GENERIC ( 
-      DATA_WIDTH  : NATURAL ; 
+      DATA_WIDTH  	: NATURAL ; 
       DRIVER_WIDTH  : NATURAL ; 
-      ADDR_WIDTH  : NATURAL  );  
+      ADDR_WIDTH  	: NATURAL  );  
     PORT ( 
 --      Driver  : in std_logic_vector ((DRIVER_WIDTH - 1) downto 0) ; 
 		Reset				: in std_logic;
 		Start				: in std_logic;
 		Stop				: in std_logic;
 		Load_data			: in std_logic;
+		
+		wr_data				: in std_logic_vector ((DATA_WIDTH - 1) downto 0);
+		wr_addr				: in std_logic_vector ((ADDR_WIDTH - 1) downto 0);
+		wr_smpl				: in std_logic;
+		
 		Dout  				: out std_logic_vector ((DATA_WIDTH - 1) downto 0) ; 
 		CLK_200MHz  		: in STD_LOGIC ); 
   END COMPONENT ; 
@@ -40,14 +52,19 @@ BEGIN
   DUT  : Generator_v_0_1  
     GENERIC MAP ( 
       DATA_WIDTH  => DATA_WIDTH  ,
- --     DRIVER_WIDTH  => DRIVER_WIDTH  ,
+      DRIVER_WIDTH  => DRIVER_WIDTH  ,
       ADDR_WIDTH  => ADDR_WIDTH   )
     PORT MAP ( 
 --      Driver   => Driver  ,
 		Reset => Reset,
 		Start =>  Start,
 		Stop =>	Stop ,
-		Load_data => Load_data , 
+		Load_data => Load_data ,
+		
+		wr_smpl => wr_smpl,
+		wr_data => wr_data,
+		wr_addr => wr_addr,
+		
 		Dout   => Dout  ,
 		CLK_200MHz   => CLK_200MHz   ) ; 
 
@@ -78,18 +95,45 @@ BEGIN
 		Start <= '1';
 		wait for period;
 		Start <= '0';
-		wait for 4000 ns;
+		wait for 7000 ns;
 		Stop <= '1';
 		wait for period;
 		Stop <= '0';
-		wait for 500 ns;
+		wait for 1500 ns;
 		Load_data <= '1';
 		wait for period;
 		Load_data <= '0';
-		wait for 2000 ns;
+		
+		--wr_data	
+		--wr_smpl	
+		--wr_addr
+		--Init block		
+		for i in (2**ADDR_WIDTH - 1) downto 0 loop 
+		
+			wr_addr <= std_logic_vector(to_unsigned(i, ADDR_WIDTH_WIDTH));
+			wr_smpl <= '1';		
+			
+			if i > (2**(ADDR_WIDTH - 1) - 1) then
+				wr_data <= std_logic_vector(to_unsigned((2**ADDR_WIDTH - 1) - i, DATA_WIDTH));
+			else 
+				wr_data <= std_logic_vector(to_unsigned(i, DATA_WIDTH));
+			end if;
+			
+			wait for period;
+			wr_smpl <= '0';
+			wr_data <= (others => '0');			
+			wait for period * wr_wait_clock;			
+		end loop;
+		--end of Init block
+		
+		wait for 17000 ns;
 		Start <= '1';
 		wait for period;
 		Start <= '0';
+		wait for 10000 ns;
+		Stop <= '1';
+		wait for period;
+		Stop <= '0';
 	wait;
  End Process;
 END;
