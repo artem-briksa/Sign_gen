@@ -53,8 +53,6 @@ architecture rtl of SinglePortRAM_handcrafted is
 
 begin
 
-	q <= ram(addr_reg);
-	
 	process(clk)
 	begin
 	if(rising_edge(clk)) then
@@ -67,5 +65,6 @@ begin
 	end if;
 	end process;
 
+	q <= ram(addr_reg);
 
 end rtl;

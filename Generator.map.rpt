@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Generator
-Sun Apr 24 13:12:38 2016
+Wed Apr 27 02:12:40 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -14,14 +14,19 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. General Register Statistics
- 10. Registers Packed Into Inferred Megafunctions
- 11. Source assignments for altsyncram:ram_rtl_0|altsyncram_vqa1:auto_generated
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |SinglePortRAM_handcrafted
- 13. Parameter Settings for Inferred Entity Instance: altsyncram:ram_rtl_0
- 14. altsyncram Parameter Settings by Entity Instance
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  9. State Machine - |Generator_v_0_1|state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0|altsyncram_vna1:auto_generated
+ 16. Parameter Settings for User Entity Instance: Top-level Entity: |Generator_v_0_1
+ 17. Parameter Settings for User Entity Instance: SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module
+ 18. Parameter Settings for Inferred Entity Instance: SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -47,100 +52,100 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +-----------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun Apr 24 13:12:37 2016            ;
+; Analysis & Synthesis Status ; Successful - Wed Apr 27 02:12:39 2016            ;
 ; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name               ; Generator                                        ;
-; Top-level Entity Name       ; SinglePortRAM_handcrafted                        ;
+; Top-level Entity Name       ; Generator_v_0_1                                  ;
 ; Family                      ; Cyclone                                          ;
-; Total logic elements        ; 0                                                ;
-; Total pins                  ; 26                                               ;
+; Total logic elements        ; 49                                               ;
+; Total pins                  ; 12                                               ;
 ; Total virtual pins          ; 0                                                ;
 ; Total memory bits           ; 2,048                                            ;
 ; Total PLLs                  ; 0                                                ;
 +-----------------------------+--------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                               ;
-+----------------------------------------------------------------------------+---------------------------+--------------------+
-; Option                                                                     ; Setting                   ; Default Value      ;
-+----------------------------------------------------------------------------+---------------------------+--------------------+
-; Device                                                                     ; EP1C6Q240C6               ;                    ;
-; Top-level entity name                                                      ; SinglePortRAM_handcrafted ; Generator          ;
-; Family name                                                                ; Cyclone                   ; Cyclone IV GX      ;
-; VHDL Show LMF Mapping Messages                                             ; Off                       ;                    ;
-; Use smart compilation                                                      ; Off                       ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                        ; On                 ;
-; Enable compact report table                                                ; Off                       ; Off                ;
-; Restructure Multiplexers                                                   ; Auto                      ; Auto               ;
-; Create Debugging Nodes for IP Cores                                        ; Off                       ; Off                ;
-; Preserve fewer node names                                                  ; On                        ; On                 ;
-; Disable OpenCore Plus hardware evaluation                                  ; Off                       ; Off                ;
-; Verilog Version                                                            ; Verilog_2001              ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993                 ; VHDL_1993          ;
-; State Machine Processing                                                   ; Auto                      ; Auto               ;
-; Safe State Machine                                                         ; Off                       ; Off                ;
-; Extract Verilog State Machines                                             ; On                        ; On                 ;
-; Extract VHDL State Machines                                                ; On                        ; On                 ;
-; Ignore Verilog initial constructs                                          ; Off                       ; Off                ;
-; Iteration limit for constant Verilog loops                                 ; 5000                      ; 5000               ;
-; Iteration limit for non-constant Verilog loops                             ; 250                       ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                    ; On                        ; On                 ;
-; Infer RAMs from Raw Logic                                                  ; On                        ; On                 ;
-; Parallel Synthesis                                                         ; On                        ; On                 ;
-; NOT Gate Push-Back                                                         ; On                        ; On                 ;
-; Power-Up Don't Care                                                        ; On                        ; On                 ;
-; Remove Redundant Logic Cells                                               ; Off                       ; Off                ;
-; Remove Duplicate Registers                                                 ; On                        ; On                 ;
-; Ignore CARRY Buffers                                                       ; Off                       ; Off                ;
-; Ignore CASCADE Buffers                                                     ; Off                       ; Off                ;
-; Ignore GLOBAL Buffers                                                      ; Off                       ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                  ; Off                       ; Off                ;
-; Ignore LCELL Buffers                                                       ; Off                       ; Off                ;
-; Ignore SOFT Buffers                                                        ; On                        ; On                 ;
-; Limit AHDL Integers to 32 Bits                                             ; Off                       ; Off                ;
-; Optimization Technique                                                     ; Balanced                  ; Balanced           ;
-; Carry Chain Length                                                         ; 70                        ; 70                 ;
-; Auto Carry Chains                                                          ; On                        ; On                 ;
-; Auto Open-Drain Pins                                                       ; On                        ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                      ; Off                       ; Off                ;
-; Auto ROM Replacement                                                       ; On                        ; On                 ;
-; Auto RAM Replacement                                                       ; On                        ; On                 ;
-; Auto Shift Register Replacement                                            ; Auto                      ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                            ; Auto                      ; Auto               ;
-; Auto Clock Enable Replacement                                              ; On                        ; On                 ;
-; Strict RAM Replacement                                                     ; Off                       ; Off                ;
-; Allow Synchronous Control Signals                                          ; On                        ; On                 ;
-; Force Use of Synchronous Clear Signals                                     ; Off                       ; Off                ;
-; Auto RAM Block Balancing                                                   ; On                        ; On                 ;
-; Auto RAM to Logic Cell Conversion                                          ; Off                       ; Off                ;
-; Auto Resource Sharing                                                      ; Off                       ; Off                ;
-; Allow Any RAM Size For Recognition                                         ; Off                       ; Off                ;
-; Allow Any ROM Size For Recognition                                         ; Off                       ; Off                ;
-; Allow Any Shift Register Size For Recognition                              ; Off                       ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                        ; On                        ; On                 ;
-; Ignore translate_off and synthesis_off directives                          ; Off                       ; Off                ;
-; Report Parameter Settings                                                  ; On                        ; On                 ;
-; Report Source Assignments                                                  ; On                        ; On                 ;
-; Report Connectivity Checks                                                 ; On                        ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                         ; Off                       ; Off                ;
-; Synchronization Register Chain Length                                      ; 2                         ; 2                  ;
-; PowerPlay Power Optimization                                               ; Normal compilation        ; Normal compilation ;
-; HDL message level                                                          ; Level2                    ; Level2             ;
-; Suppress Register Optimization Related Messages                            ; Off                       ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                   ; 5000                      ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                      ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                  ; 100                       ; 100                ;
-; Clock MUX Protection                                                       ; On                        ; On                 ;
-; Block Design Naming                                                        ; Auto                      ; Auto               ;
-; Synthesis Effort                                                           ; Auto                      ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                        ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                       ; Off                       ; Off                ;
-; Analysis & Synthesis Message Level                                         ; Medium                    ; Medium             ;
-; Disable Register Merging Across Hierarchies                                ; Auto                      ; Auto               ;
-; Resource Aware Inference For Block RAM                                     ; On                        ; On                 ;
-; Synthesis Seed                                                             ; 1                         ; 1                  ;
-+----------------------------------------------------------------------------+---------------------------+--------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP1C6Q240C6        ;                    ;
+; Top-level entity name                                                      ; Generator_v_0_1    ; Generator          ;
+; Family name                                                                ; Cyclone            ; Cyclone IV GX      ;
+; VHDL Show LMF Mapping Messages                                             ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
 
 
 +------------------------------------------+
@@ -166,6 +171,7 @@ applicable agreement for further details.
 ; File Name with User-Entered Path                             ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                                              ; Library ;
 +--------------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; SinglePortRAM_handcrafted.vhd                                ; yes             ; User VHDL File                                        ; C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/SinglePortRAM_handcrafted.vhd                                ;         ;
+; Generator_v_0_1.vhd                                          ; yes             ; User VHDL File                                        ; C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Generator_v_0_1.vhd                                          ;         ;
 ; altsyncram.tdf                                               ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                                                                          ;         ;
 ; stratix_ram_block.inc                                        ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                   ;         ;
 ; lpm_mux.inc                                                  ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                                                                             ;         ;
@@ -175,65 +181,89 @@ applicable agreement for further details.
 ; altrom.inc                                                   ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                                                              ;         ;
 ; altram.inc                                                   ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                                                              ;         ;
 ; altdpram.inc                                                 ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                                                                            ;         ;
-; db/altsyncram_vqa1.tdf                                       ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/db/altsyncram_vqa1.tdf                                       ;         ;
-; db/Generator.ram0_SinglePortRAM_handcrafted_ed960bca.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/db/Generator.ram0_SinglePortRAM_handcrafted_ed960bca.hdl.mif ;         ;
+; db/altsyncram_vna1.tdf                                       ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/db/altsyncram_vna1.tdf                                       ;         ;
+; db/generator.ram0_singleportram_handcrafted_7ca5f323.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/db/generator.ram0_singleportram_handcrafted_7ca5f323.hdl.mif ;         ;
 +--------------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Total logic elements                        ; 0     ;
-;     -- Combinational with no register       ; 0     ;
-;     -- Register only                        ; 0     ;
-;     -- Combinational with a register        ; 0     ;
-;                                             ;       ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- 2 input functions                    ; 0     ;
-;     -- 1 input functions                    ; 0     ;
-;     -- 0 input functions                    ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;     -- qfbk mode                            ; 0     ;
-;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 0     ;
-;     -- asynchronous clear/load mode         ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-; I/O pins                                    ; 26    ;
-; Total memory bits                           ; 2048  ;
-; Maximum fan-out node                        ; we    ;
-; Maximum fan-out                             ; 8     ;
-; Total fan-out                               ; 96    ;
-; Average fan-out                             ; 2.82  ;
-+---------------------------------------------+-------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Total logic elements                        ; 49         ;
+;     -- Combinational with no register       ; 30         ;
+;     -- Register only                        ; 0          ;
+;     -- Combinational with a register        ; 19         ;
+;                                             ;            ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 19         ;
+;     -- 3 input functions                    ; 4          ;
+;     -- 2 input functions                    ; 16         ;
+;     -- 1 input functions                    ; 9          ;
+;     -- 0 input functions                    ; 1          ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 42         ;
+;     -- arithmetic mode                      ; 7          ;
+;     -- qfbk mode                            ; 0          ;
+;     -- register cascade mode                ; 0          ;
+;     -- synchronous clear/load mode          ; 2          ;
+;     -- asynchronous clear/load mode         ; 0          ;
+;                                             ;            ;
+; Total registers                             ; 19         ;
+; Total logic cells in carry chains           ; 8          ;
+; I/O pins                                    ; 12         ;
+; Total memory bits                           ; 2048       ;
+; Maximum fan-out node                        ; CLK_200MHz ;
+; Maximum fan-out                             ; 27         ;
+; Total fan-out                               ; 262        ;
+; Average fan-out                             ; 3.80       ;
++---------------------------------------------+------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                          ;
-+----------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node             ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                            ; Library Name ;
-+----------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------+--------------+
-; |SinglePortRAM_handcrafted             ; 0 (0)       ; 0            ; 2048        ; 26   ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |SinglePortRAM_handcrafted                                                     ; work         ;
-;    |altsyncram:ram_rtl_0|              ; 0 (0)       ; 0            ; 2048        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |SinglePortRAM_handcrafted|altsyncram:ram_rtl_0                                ; work         ;
-;       |altsyncram_vqa1:auto_generated| ; 0 (0)       ; 0            ; 2048        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |SinglePortRAM_handcrafted|altsyncram:ram_rtl_0|altsyncram_vqa1:auto_generated ; work         ;
-+----------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                    ;
++-----------------------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                      ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                             ; Library Name ;
++-----------------------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |Generator_v_0_1                                                ; 49 (49)     ; 19           ; 2048        ; 12   ; 0            ; 30 (30)      ; 0 (0)             ; 19 (19)          ; 8 (8)           ; 0 (0)      ; |Generator_v_0_1                                                                                                                ; work         ;
+;    |SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module| ; 0 (0)       ; 0            ; 2048        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Generator_v_0_1|SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module                                                     ; work         ;
+;       |altsyncram:ram_rtl_0|                                    ; 0 (0)       ; 0            ; 2048        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Generator_v_0_1|SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0                                ; work         ;
+;          |altsyncram_vna1:auto_generated|                       ; 0 (0)       ; 0            ; 2048        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Generator_v_0_1|SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0|altsyncram_vna1:auto_generated ; work         ;
++-----------------------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                      ;
-+----------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------------------------------------------------------+
-; Name                                                           ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                                          ;
-+----------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------------------------------------------------------+
-; altsyncram:ram_rtl_0|altsyncram_vqa1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; db/Generator.ram0_SinglePortRAM_handcrafted_ed960bca.hdl.mif ;
-+----------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                 ;
++---------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------------------------------------------------------+
+; Name                                                                                                                      ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                                          ;
++---------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------------------------------------------------------+
+; SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0|altsyncram_vna1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; db/Generator.ram0_SinglePortRAM_handcrafted_7ca5f323.hdl.mif ;
++---------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------+
+; State Machine - |Generator_v_0_1|state                     ;
++----------------+------------+----------------+-------------+
+; Name           ; state.idle ; state.init_ram ; state.count ;
++----------------+------------+----------------+-------------+
+; state.count    ; 0          ; 0              ; 0           ;
+; state.init_ram ; 0          ; 1              ; 1           ;
+; state.idle     ; 1          ; 0              ; 1           ;
++----------------+------------+----------------+-------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; data[7]                               ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -241,124 +271,163 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 19    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 2     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 15    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------+
-; Registers Packed Into Inferred Megafunctions ;
-+----------------+--------------+--------------+
-; Register Name  ; Megafunction ; Type         ;
-+----------------+--------------+--------------+
-; addr_reg[0..7] ; ram_rtl_0    ; RAM          ;
-+----------------+--------------+--------------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; Counter[0]                             ; 7       ;
+; Counter[1]                             ; 4       ;
+; Counter[2]                             ; 4       ;
+; Counter[3]                             ; 4       ;
+; Counter[4]                             ; 4       ;
+; Counter[5]                             ; 4       ;
+; Counter[6]                             ; 4       ;
+; Counter[7]                             ; 10      ;
+; Total number of inverted registers = 8 ;         ;
++----------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------+
-; Source assignments for altsyncram:ram_rtl_0|altsyncram_vqa1:auto_generated ;
-+---------------------------------+--------------------+------+--------------+
-; Assignment                      ; Value              ; From ; To           ;
-+---------------------------------+--------------------+------+--------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -            ;
-+---------------------------------+--------------------+------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                                                            ;
++---------------------------------------------------------------------------+----------------------------------------------------------------------+------+
+; Register Name                                                             ; Megafunction                                                         ; Type ;
++---------------------------------------------------------------------------+----------------------------------------------------------------------+------+
+; SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|addr_reg[0..7] ; SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|ram_rtl_0 ; RAM  ;
++---------------------------------------------------------------------------+----------------------------------------------------------------------+------+
 
 
-+-------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |SinglePortRAM_handcrafted ;
-+----------------+-------+------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                             ;
-+----------------+-------+------------------------------------------------------------------+
-; DATA_WIDTH     ; 8     ; Signed Integer                                                   ;
-; ADDR_WIDTH     ; 8     ; Signed Integer                                                   ;
-+----------------+-------+------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Generator_v_0_1|data[0]    ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |Generator_v_0_1|Counter[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0|altsyncram_vna1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                      ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                       ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Generator_v_0_1 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; ADDR_WIDTH     ; 8     ; Signed Integer                                         ;
+; DRIVER_WIDTH   ; 3     ; Signed Integer                                         ;
+; DATA_WIDTH     ; 8     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: altsyncram:ram_rtl_0                                              ;
-+------------------------------------+--------------------------------------------------------------+----------------+
-; Parameter Name                     ; Value                                                        ; Type           ;
-+------------------------------------+--------------------------------------------------------------+----------------+
-; BYTE_SIZE_BLOCK                    ; 8                                                            ; Untyped        ;
-; AUTO_CARRY_CHAINS                  ; ON                                                           ; AUTO_CARRY     ;
-; IGNORE_CARRY_BUFFERS               ; OFF                                                          ; IGNORE_CARRY   ;
-; AUTO_CASCADE_CHAINS                ; ON                                                           ; AUTO_CASCADE   ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                                                          ; IGNORE_CASCADE ;
-; WIDTH_BYTEENA                      ; 1                                                            ; Untyped        ;
-; OPERATION_MODE                     ; SINGLE_PORT                                                  ; Untyped        ;
-; WIDTH_A                            ; 8                                                            ; Untyped        ;
-; WIDTHAD_A                          ; 8                                                            ; Untyped        ;
-; NUMWORDS_A                         ; 256                                                          ; Untyped        ;
-; OUTDATA_REG_A                      ; UNREGISTERED                                                 ; Untyped        ;
-; ADDRESS_ACLR_A                     ; NONE                                                         ; Untyped        ;
-; OUTDATA_ACLR_A                     ; NONE                                                         ; Untyped        ;
-; WRCONTROL_ACLR_A                   ; NONE                                                         ; Untyped        ;
-; INDATA_ACLR_A                      ; NONE                                                         ; Untyped        ;
-; BYTEENA_ACLR_A                     ; NONE                                                         ; Untyped        ;
-; WIDTH_B                            ; 1                                                            ; Untyped        ;
-; WIDTHAD_B                          ; 1                                                            ; Untyped        ;
-; NUMWORDS_B                         ; 1                                                            ; Untyped        ;
-; INDATA_REG_B                       ; CLOCK1                                                       ; Untyped        ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                                       ; Untyped        ;
-; RDCONTROL_REG_B                    ; CLOCK1                                                       ; Untyped        ;
-; ADDRESS_REG_B                      ; CLOCK1                                                       ; Untyped        ;
-; OUTDATA_REG_B                      ; UNREGISTERED                                                 ; Untyped        ;
-; BYTEENA_REG_B                      ; CLOCK1                                                       ; Untyped        ;
-; INDATA_ACLR_B                      ; NONE                                                         ; Untyped        ;
-; WRCONTROL_ACLR_B                   ; NONE                                                         ; Untyped        ;
-; ADDRESS_ACLR_B                     ; NONE                                                         ; Untyped        ;
-; OUTDATA_ACLR_B                     ; NONE                                                         ; Untyped        ;
-; RDCONTROL_ACLR_B                   ; NONE                                                         ; Untyped        ;
-; BYTEENA_ACLR_B                     ; NONE                                                         ; Untyped        ;
-; WIDTH_BYTEENA_A                    ; 1                                                            ; Untyped        ;
-; WIDTH_BYTEENA_B                    ; 1                                                            ; Untyped        ;
-; RAM_BLOCK_TYPE                     ; AUTO                                                         ; Untyped        ;
-; BYTE_SIZE                          ; 8                                                            ; Untyped        ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                         ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                         ; Untyped        ;
-; INIT_FILE                          ; db/Generator.ram0_SinglePortRAM_handcrafted_ed960bca.hdl.mif ; Untyped        ;
-; INIT_FILE_LAYOUT                   ; PORT_A                                                       ; Untyped        ;
-; MAXIMUM_DEPTH                      ; 0                                                            ; Untyped        ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL                                                       ; Untyped        ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                                                       ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                                       ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                                       ; Untyped        ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                              ; Untyped        ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                              ; Untyped        ;
-; ENABLE_ECC                         ; FALSE                                                        ; Untyped        ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                                        ; Untyped        ;
-; WIDTH_ECCSTATUS                    ; 3                                                            ; Untyped        ;
-; DEVICE_FAMILY                      ; Cyclone                                                      ; Untyped        ;
-; CBXI_PARAMETER                     ; altsyncram_vqa1                                              ; Untyped        ;
-+------------------------------------+--------------------------------------------------------------+----------------+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                                                 ;
+; addr_width     ; 8     ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                 ;
-+-------------------------------------------+----------------------+
-; Name                                      ; Value                ;
-+-------------------------------------------+----------------------+
-; Number of entity instances                ; 1                    ;
-; Entity Instance                           ; altsyncram:ram_rtl_0 ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT          ;
-;     -- WIDTH_A                            ; 8                    ;
-;     -- NUMWORDS_A                         ; 256                  ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED         ;
-;     -- WIDTH_B                            ; 1                    ;
-;     -- NUMWORDS_B                         ; 1                    ;
-;     -- ADDRESS_REG_B                      ; CLOCK1               ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED         ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                 ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ;
-+-------------------------------------------+----------------------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0 ;
++------------------------------------+--------------------------------------------------------------+------------------------------+
+; Parameter Name                     ; Value                                                        ; Type                         ;
++------------------------------------+--------------------------------------------------------------+------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                            ; Untyped                      ;
+; AUTO_CARRY_CHAINS                  ; ON                                                           ; AUTO_CARRY                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                          ; IGNORE_CARRY                 ;
+; AUTO_CASCADE_CHAINS                ; ON                                                           ; AUTO_CASCADE                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                          ; IGNORE_CASCADE               ;
+; WIDTH_BYTEENA                      ; 1                                                            ; Untyped                      ;
+; OPERATION_MODE                     ; SINGLE_PORT                                                  ; Untyped                      ;
+; WIDTH_A                            ; 8                                                            ; Untyped                      ;
+; WIDTHAD_A                          ; 8                                                            ; Untyped                      ;
+; NUMWORDS_A                         ; 256                                                          ; Untyped                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                                 ; Untyped                      ;
+; ADDRESS_ACLR_A                     ; NONE                                                         ; Untyped                      ;
+; OUTDATA_ACLR_A                     ; NONE                                                         ; Untyped                      ;
+; WRCONTROL_ACLR_A                   ; NONE                                                         ; Untyped                      ;
+; INDATA_ACLR_A                      ; NONE                                                         ; Untyped                      ;
+; BYTEENA_ACLR_A                     ; NONE                                                         ; Untyped                      ;
+; WIDTH_B                            ; 1                                                            ; Untyped                      ;
+; WIDTHAD_B                          ; 1                                                            ; Untyped                      ;
+; NUMWORDS_B                         ; 1                                                            ; Untyped                      ;
+; INDATA_REG_B                       ; CLOCK1                                                       ; Untyped                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                                       ; Untyped                      ;
+; RDCONTROL_REG_B                    ; CLOCK1                                                       ; Untyped                      ;
+; ADDRESS_REG_B                      ; CLOCK1                                                       ; Untyped                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                                 ; Untyped                      ;
+; BYTEENA_REG_B                      ; CLOCK1                                                       ; Untyped                      ;
+; INDATA_ACLR_B                      ; NONE                                                         ; Untyped                      ;
+; WRCONTROL_ACLR_B                   ; NONE                                                         ; Untyped                      ;
+; ADDRESS_ACLR_B                     ; NONE                                                         ; Untyped                      ;
+; OUTDATA_ACLR_B                     ; NONE                                                         ; Untyped                      ;
+; RDCONTROL_ACLR_B                   ; NONE                                                         ; Untyped                      ;
+; BYTEENA_ACLR_B                     ; NONE                                                         ; Untyped                      ;
+; WIDTH_BYTEENA_A                    ; 1                                                            ; Untyped                      ;
+; WIDTH_BYTEENA_B                    ; 1                                                            ; Untyped                      ;
+; RAM_BLOCK_TYPE                     ; AUTO                                                         ; Untyped                      ;
+; BYTE_SIZE                          ; 8                                                            ; Untyped                      ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                         ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                         ; Untyped                      ;
+; INIT_FILE                          ; db/Generator.ram0_SinglePortRAM_handcrafted_7ca5f323.hdl.mif ; Untyped                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                                       ; Untyped                      ;
+; MAXIMUM_DEPTH                      ; 0                                                            ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                                       ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                                       ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                                       ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                                       ; Untyped                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                              ; Untyped                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                              ; Untyped                      ;
+; ENABLE_ECC                         ; FALSE                                                        ; Untyped                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                                        ; Untyped                      ;
+; WIDTH_ECCSTATUS                    ; 3                                                            ; Untyped                      ;
+; DEVICE_FAMILY                      ; Cyclone                                                      ; Untyped                      ;
+; CBXI_PARAMETER                     ; altsyncram_vna1                                              ; Untyped                      ;
++------------------------------------+--------------------------------------------------------------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                            ;
++-------------------------------------------+---------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                           ;
++-------------------------------------------+---------------------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                               ;
+; Entity Instance                           ; SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0 ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                                     ;
+;     -- WIDTH_A                            ; 8                                                                               ;
+;     -- NUMWORDS_A                         ; 256                                                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                    ;
+;     -- WIDTH_B                            ; 1                                                                               ;
+;     -- NUMWORDS_B                         ; 1                                                                               ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                          ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                    ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                            ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                       ;
++-------------------------------------------+---------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -376,7 +445,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Sun Apr 24 13:12:35 2016
+    Info: Processing started: Wed Apr 27 02:12:36 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Generator -c Generator
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file generatortb.vhd
@@ -419,9 +488,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file memory_
 Info (12021): Found 2 design units, including 1 entities, in source file singleportram_handcrafted.vhd
     Info (12022): Found design unit 1: SinglePortRAM_handcrafted-rtl
     Info (12023): Found entity 1: SinglePortRAM_handcrafted
-Info (12127): Elaborating entity "SinglePortRAM_handcrafted" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file generator_v_0_1.vhd
+    Info (12022): Found design unit 1: Generator_v_0_1-rtl
+    Info (12023): Found entity 1: Generator_v_0_1
+Info (12127): Elaborating entity "Generator_v_0_1" for the top level hierarchy
+Info (12128): Elaborating entity "SinglePortRAM_handcrafted" for hierarchy "SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module"
 Info (19000): Inferred 1 megafunctions from design logic
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram_rtl_0" 
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|ram_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
         Info (286033): Parameter WIDTH_A set to 8
         Info (286033): Parameter WIDTHAD_A set to 8
@@ -431,9 +504,9 @@ Info (19000): Inferred 1 megafunctions from design logic
         Info (286033): Parameter OUTDATA_ACLR_A set to NONE
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-        Info (286033): Parameter INIT_FILE set to db/Generator.ram0_SinglePortRAM_handcrafted_ed960bca.hdl.mif
-Info (12130): Elaborated megafunction instantiation "altsyncram:ram_rtl_0"
-Info (12133): Instantiated megafunction "altsyncram:ram_rtl_0" with the following parameter:
+        Info (286033): Parameter INIT_FILE set to db/Generator.ram0_SinglePortRAM_handcrafted_7ca5f323.hdl.mif
+Info (12130): Elaborated megafunction instantiation "SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "SinglePortRAM_handcrafted:SinglePortRAM_handcrafted_module|altsyncram:ram_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
     Info (12134): Parameter "WIDTH_A" = "8"
     Info (12134): Parameter "WIDTHAD_A" = "8"
@@ -443,19 +516,20 @@ Info (12133): Instantiated megafunction "altsyncram:ram_rtl_0" with the followin
     Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-    Info (12134): Parameter "INIT_FILE" = "db/Generator.ram0_SinglePortRAM_handcrafted_ed960bca.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_vqa1.tdf
-    Info (12023): Found entity 1: altsyncram_vqa1
+    Info (12134): Parameter "INIT_FILE" = "db/Generator.ram0_SinglePortRAM_handcrafted_7ca5f323.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_vna1.tdf
+    Info (12023): Found entity 1: altsyncram_vna1
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 34 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 18 input pins
+Info (21057): Implemented 69 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
     Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 49 logic cells
     Info (21064): Implemented 8 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 488 megabytes
-    Info: Processing ended: Sun Apr 24 13:12:38 2016
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Processing ended: Wed Apr 27 02:12:40 2016
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

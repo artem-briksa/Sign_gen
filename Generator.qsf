@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY Cyclone
 set_global_assignment -name DEVICE EP1C6Q240C6
-set_global_assignment -name TOP_LEVEL_ENTITY SinglePortRAM_handcrafted
+set_global_assignment -name TOP_LEVEL_ENTITY Generator_v_0_1
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "01:55:48  FEBRUARY 16, 2016"
 set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
@@ -75,12 +75,11 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME GeneratorTB -section_id GeneratorTB
 set_global_assignment -name EDA_TEST_BENCH_FILE GeneratorTB.vhd -section_id GeneratorTB2
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH Memory_on_LUT_RAM_1Port_TB -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH Generator_v_0_1_TB -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME GeneratorTB -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME uut -section_id GeneratorTB
 set_location_assignment PIN_158 -to CLK_offset_2
 set_location_assignment PIN_159 -to CLK_offset_1
-set_global_assignment -name SDC_FILE Generator.out.sdc
 set_global_assignment -name VHDL_FILE GeneratorTB.vhd
 set_global_assignment -name VHDL_FILE Generator.vhd
 set_global_assignment -name VHDL_FILE Signal_generator.vhd
@@ -117,6 +116,17 @@ set_global_assignment -name VHDL_FILE single_port_ram_with_init.vhd
 set_global_assignment -name QIP_FILE DualPortRAM.qip
 set_global_assignment -name VHDL_FILE Memory_on_LUT_RAM_2Port.vhd
 set_global_assignment -name VHDL_FILE Memory_on_LUT_RAM_1Port.vhd
+set_global_assignment -name VHDL_FILE SinglePortRAM_handcrafted.vhd
+set_global_assignment -name EDA_TEST_BENCH_NAME Memory_on_LUT_RAM_1Port_TB -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Memory_on_LUT_RAM_1Port_TB
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "10 us" -section_id Memory_on_LUT_RAM_1Port_TB
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Memory_on_LUT_RAM_1Port_TB -section_id Memory_on_LUT_RAM_1Port_TB
+set_global_assignment -name VHDL_FILE Generator_v_0_1.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[0]
 set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[1]
 set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[2]
@@ -131,20 +141,15 @@ set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[11]
 set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[12]
 set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[13]
 set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Dout[3]
-set_global_assignment -name VHDL_FILE SinglePortRAM_handcrafted.vhd
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name EDA_TEST_BENCH_FILE GeneratorTB.vhd -section_id GeneratorTB
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Rise_edge_TB.vhd -section_id Edge_selector
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Edge_selector_TB.vhd -section_id Edge_attempt_2
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Frequency_divider_TB.vhd -section_id Frequency_divider_TB
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Memory_on_lut_rom_TB.vhd -section_id Memory_on_lut_rom_TB
-set_global_assignment -name EDA_TEST_BENCH_NAME Memory_on_LUT_RAM_1Port_TB -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Memory_on_LUT_RAM_1Port_TB
-set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "10 us" -section_id Memory_on_LUT_RAM_1Port_TB
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Memory_on_LUT_RAM_1Port_TB -section_id Memory_on_LUT_RAM_1Port_TB
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Memory_on_LUT_RAM_1Port_TB.vhd -section_id Memory_on_LUT_RAM_1Port_TB
+set_global_assignment -name EDA_TEST_BENCH_NAME Generator_v_0_1_TB -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Generator_v_0_1_TB
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "10 us" -section_id Generator_v_0_1_TB
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Generator_v_0_1_TB -section_id Generator_v_0_1_TB
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Generator_v_0_1_TB.vhd -section_id Generator_v_0_1_TB
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
