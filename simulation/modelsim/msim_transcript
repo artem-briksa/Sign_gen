@@ -4,7 +4,8 @@
 # 	vdel -lib rtl_work -all
 # }
 # vlib rtl_work
-# ** Warning: (vlib-34# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
@@ -56,57 +57,46 @@
 # 
 #           File in use by: Artsiom  Hostname: ARTSIOM  ProcessID: 8464
 # 
-#           Attempting to use alternate WLF file "./wlftwmtfhf".
+#           Attempting to use alternate WLF file "./wlft7i2e33".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftwmtfhf
+#           Using alternate file: ./wlft7i2e33
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 10 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 5 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 15 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 25 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 35 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 45 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 55 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 65 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 75 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 85 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 95 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-do C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1.do
+# WARNING: No extended dataflow license exists
+add wave -position end  sim:/generator_v_0_1_tb/DUT/data
+add wave -position end  sim:/generator_v_0_1_tb/DUT/addr
+add wave -position end  sim:/generator_v_0_1_tb/DUT/state
+add wave -position end  sim:/generator_v_0_1_tb/DUT/Counter
 restart -f
 run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 5 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 15 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 25 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 35 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 45 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 55 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 65 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 75 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 85 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 95 ns  Iteration: 1  Instance: /generator_v_0_1_tb/DUT
+vcom -93 -work work -O0 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Generator_v_0_1.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Generator_v_0_1
+# -- Compiling architecture rtl of Generator_v_0_1
+vcom -93 -work work -O0 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity Generator_v_0_1_TB
+# -- Compiling architecture Generator_v_0_1_TB_arch of Generator_v_0_1_TB
+restart -f
+# Loading work.generator_v_0_1_tb(generator_v_0_1_tb_arch)
+# Loading work.generator_v_0_1(rtl)
+run
+run
+restart -f
 run

@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 dC:\Users\Artsiom\OneDrive\Documents\Altera\FPGA_projects\Generator_attempt_5\simulation\modelsim
 Egenerator_v_0_1
-Z1 w1461712348
+Z1 w1461769518
 Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
@@ -13,24 +13,24 @@ Z6 8C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5
 Z7 FC:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Generator_v_0_1.vhd
 l0
 L9
-V^d]Sm<FF?`f6oh9kCd@lk1
+VB6gnaiAcG9lVHRWURoKTm3
 Z8 OV;C;10.1d;51
 31
-Z9 !s108 1461748349.244000
-Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Generator_v_0_1.vhd|
+Z9 !s108 1461769526.412000
+Z10 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Generator_v_0_1.vhd|
 Z11 !s107 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/Generator_v_0_1.vhd|
 Z12 o-93 -work work -O0
 Z13 tExplicit 1
-!s100 cBgODCe`62jKIFU;[bg6h3
+!s100 X0=VQgb^VCcVzY;R?F1XO2
 !i10b 1
 Artl
 R2
 R3
 R4
-DEx4 work 15 generator_v_0_1 0 22 ^d]Sm<FF?`f6oh9kCd@lk1
-l58
-L22
-V5eK<460K17@>CfI7T5oT<3
+DEx4 work 15 generator_v_0_1 0 22 B6gnaiAcG9lVHRWURoKTm3
+l63
+L26
+VPfbkXYMgaI;GOJHRoWKm:1
 R8
 31
 R9
@@ -38,10 +38,10 @@ R10
 R11
 R12
 R13
-!s100 VngO_hf`8OV29219UYXi03
+!s100 ^`lehkA6hE9VD4T_Y[C6^2
 !i10b 1
 Egenerator_v_0_1_tb
-Z14 w1461711202
+Z14 w1461769369
 Z15 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
 Z16 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
 Z17 DPx4 ieee 16 std_logic_textio 0 22 ?Il0a149GV276[?[UMDWh2
@@ -53,13 +53,13 @@ Z18 8C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_
 Z19 FC:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd
 l0
 L8
-Vb5Jbo=DCEhHokge9=QW`Q1
-!s100 459c?63dK;ZX46foWX;CF1
+VeGTE<_@BObK3aF5aM2zj^0
+!s100 l;bKgg0gZ>ajcVP;^W=C@0
 R8
 31
 !i10b 1
-Z20 !s108 1461748349.369000
-Z21 !s90 -reportprogress|300|-93|-work|work|C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd|
+Z20 !s108 1461769529.014000
+Z21 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd|
 Z22 !s107 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/simulation/modelsim/Generator_v_0_1_TB.vhd|
 R12
 R13
@@ -70,11 +70,11 @@ R17
 R4
 R3
 R2
-DEx4 work 18 generator_v_0_1_tb 0 22 b5Jbo=DCEhHokge9=QW`Q1
-l29
+Z23 DEx4 work 18 generator_v_0_1_tb 0 22 eGTE<_@BObK3aF5aM2zj^0
+l39
 L15
-VGfWE=M3JU;?<i8cdPQ[jV1
-!s100 RL;;N85S@FZ`jgbjObV:E2
+VHWm79Mdm?3E<[YX8fimOC0
+!s100 z^iBfdldgNV8S_DMZ4@Im2
 R8
 31
 !i10b 1
@@ -84,21 +84,21 @@ R22
 R12
 R13
 Esingleportram_handcrafted
-Z23 w1461707181
+Z24 w1461707181
 R2
 R3
 R4
 R5
-Z24 8C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/SinglePortRAM_handcrafted.vhd
-Z25 FC:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/SinglePortRAM_handcrafted.vhd
+Z25 8C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/SinglePortRAM_handcrafted.vhd
+Z26 FC:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/SinglePortRAM_handcrafted.vhd
 l0
 L8
 V^CzzL^1aU>8hjHQS=Raio1
 R8
 31
-Z26 !s108 1461748349.103000
-Z27 !s90 -reportprogress|300|-93|-work|work|C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/SinglePortRAM_handcrafted.vhd|
-Z28 !s107 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/SinglePortRAM_handcrafted.vhd|
+Z27 !s108 1461769290.714000
+Z28 !s90 -reportprogress|300|-93|-work|work|C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/SinglePortRAM_handcrafted.vhd|
+Z29 !s107 C:/Users/Artsiom/OneDrive/Documents/Altera/FPGA_projects/Generator_attempt_5/SinglePortRAM_handcrafted.vhd|
 R12
 R13
 !s100 SNzN^0l13TRO]FS9V;OPh2
@@ -113,9 +113,9 @@ L27
 V[J]@i:NHLLZcPo^_RLz0H2
 R8
 31
-R26
 R27
 R28
+R29
 R12
 R13
 !s100 kZ=bKMcZ^HXiW>95J0?840
